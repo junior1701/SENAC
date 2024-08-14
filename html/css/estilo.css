@@ -1,0 +1,101 @@
+/* styles.css */
+
+/* Define a cor de fundo da página e centraliza o conteúdo */
+body {
+    background-color: #f4f4f9;
+    /* Cor de fundo da página */
+    font-family: Arial, sans-serif;
+    /* Define a fonte padrão para a página */
+    display: flex;
+    /* Define um container flexível */
+    justify-content: center;
+    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    /* Centraliza o conteúdo verticalmente */
+    height: 100vh;
+    /* Define a altura da página como 100% da altura da janela */
+    margin: 0;
+    /* Remove a margem padrão */
+}
+
+/* Estiliza o container do formulário */
+.form-container {
+    background-color: #ffffff;
+    /* Define a cor de fundo do container */
+    padding: 20px;
+    /* Define o espaçamento interno */
+    border-radius: 8px;
+    /* Arredonda os cantos do container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra ao redor do container */
+    width: 100%;
+    /* Define a largura como 100% do container pai */
+    max-width: 400px;
+    /* Define a largura máxima do container */
+}
+
+/* Estiliza o título do formulário */
+.form-container h2 {
+    margin-bottom: 20px;
+    /* Define o espaçamento inferior */
+    color: #333333;
+    /* Define a cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+/* Estiliza as labels dos campos do formulário */
+.form-container label {
+    display: block;
+    /* Define que o elemento deve ocupar toda a largura disponível */
+    margin-bottom: 5px;
+    /* Define o espaçamento inferior */
+    color: #666666;
+    /* Define a cor do texto */
+    font-weight: bold;
+    /* Define o texto como negrito */
+}
+
+/* Estiliza os campos de entrada de texto e número */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    /* Define a largura como 100% do container pai */
+    padding: 10px;
+    /* Define o espaçamento interno */
+    margin-bottom: 15px;
+    /* Define o espaçamento inferior */
+    border: 1px solid #dddddd;
+    /* Define a borda do campo */
+    border-radius: 4px;
+    /* Arredonda os cantos do campo */
+    box-sizing: border-box;
+    /* Inclui a borda e o padding no cálculo da largura e altura */
+}
+
+/* Estiliza o botão de envio */
+.form-container button {
+    width: 100%;
+    /* Define a largura como 100% do container pai */
+    padding: 10px;
+    /* Define o espaçamento interno */
+    background-color: #5cb85c;
+    /* Define a cor de fundo do botão */
+    border: none;
+    /* Remove a borda padrão */
+    border-radius: 4px;
+    /* Arredonda os cantos do botão */
+    color: #ffffff;
+    /* Define a cor do texto */
+    font-weight: bold;
+    /* Define o texto como negrito */
+    cursor: pointer;
+    /* Altera o cursor ao passar sobre o botão */
+}
+
+/* Adiciona efeito de hover ao botão de envio */
+.form-container button:hover {
+    background-color: #4cae4c;
+    /* Altera a cor de fundo quando o botão é hovered */
+}

@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+
+use app\database\builder\InsertQuery;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$FieldsAndValues = [
+    'codigo_banco'  => '001',
+    'isbp'          => '001',
+    'nome'          => '001',
+    'nome_completo' => '001'
+];
+InsertQuery::table('bank')->save($FieldsAndValues);
