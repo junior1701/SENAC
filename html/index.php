@@ -1,13 +1,13 @@
 <?php
 
-use app\database\builder\InsertQuery;
+use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$FieldsAndValues = [
-    'codigo_banco'  => '001',
-    'isbp'          => '001',
-    'nome'          => '001',
-    'nome_completo' => '001'
-];
-InsertQuery::table('bank')->save($FieldsAndValues);
+$app = AppFactory::create();
+
+require __DIR__ . '/../app/helpers/settings.php';
+
+require __DIR__ . '/../app/routes/routes.php';
+
+$app->run();

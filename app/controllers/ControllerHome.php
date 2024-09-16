@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-
 class ControllerHome extends Base
 {
     public function home($request, $response)
