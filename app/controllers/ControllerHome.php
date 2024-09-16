@@ -11,6 +11,8 @@ class ControllerHome extends Base
             'titulo' => 'Você esta no inicio, jovem gafanhoto'
         ];
         return $this->getTwig()
-            ->render($response, $this->setView('pagina-inicial'), $TempleteData);
+            ->render($response, $this->setView('pagina-inicial'), $TempleteData)
+            ->withHeader('Content-Type', 'text/html')
+            ->withStatus(200);
     }
 }
