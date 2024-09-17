@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block main %}
+<div class="col-12">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Início</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lista disciplina</li>
+        </ol>
+</div>
+<div class="col-12">
+    <table class="table table-striped table-hover table-bordered" id="tabela">
+        <thead>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Ativo</td>
+                <td>Ação</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Ativo</td>
+                <td>
+                    <button class="btn btn-sm btn-danger">Excluir</button>
+                    <button class="btn btn-sm btn-warning">Alterar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Ativo</td>
+                <td>Ação</td>
+            </tr>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Ativo</td>
+                <td>Ação</td>
+            </tr>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Ativo</td>
+                <td>Ação</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="/js/listadiciplina.js"></script>
+{% endblock %}

@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\ControllerCliente;
+use app\controllers\ControllerDisciplina;
 use app\controllers\ControllerHome;
 use Slim\Routing\RouteCollectorProxy;
 

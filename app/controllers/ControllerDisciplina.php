@@ -11,9 +11,9 @@ class ControllerDisciplina extends Base
                 'titulo' => 'Lista de Disciplinas'
             ];
             return $this->getTwig()
-            ->render($response, $this->setView('listadisciplina'), $TemplateData)
-            ->withHeader('Content-Type', 'text/html')
-            ->withStatus(200);
+                ->render($response, $this->setView('listadisciplina'), $TemplateData)
+                ->withHeader('Content-Type', 'text/html')
+                ->withStatus(200);
         } catch (\Exception $e) {
             throw new \Exception("Restrição: " . $e->getMessage(), 1);
         }
