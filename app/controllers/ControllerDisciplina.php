@@ -30,6 +30,10 @@ class ControllerDisciplina extends Base
             'acao' => 'c',
             'titulo' => 'Lista de Disciplinas'
         ];
+        return $this->getTwig()
+            ->render($response, $this->setView('disciplina'), $TemplateData)
+            ->withHeader('Content-Type', 'text/html')
+            ->withStatus(200);
     }
     public function alterar($request, $response, $args)
     {
