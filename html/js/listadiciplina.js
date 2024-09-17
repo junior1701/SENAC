@@ -8,8 +8,6 @@ const table = new DataTable('#tabela', {
     responsive: true,
     stateSave: true,
     select: true,
-    //processing: true,
-    //serverSide: true,
     language: {
         url: '/js/pt-BR.json'
     },
