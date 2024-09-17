@@ -18,33 +18,17 @@
             </tr>
         </thead>
         <tbody>
+            {% for item in disciplinas %}
             <tr>
-                <td>Código</td>
-                <td>Nome</td>
-                <td>Ativo</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.ativo }}</td>
                 <td>
-                    <button class="btn btn-sm btn-danger">Excluir</button>
-                    <button class="btn btn-sm btn-warning">Alterar</button>
+                    <a href="/disciplina/alterar/{{ item.id }}" class="btn btn-primary">Alterar</a>
+                    <button class="btn btn-danger">Excluir</button>
                 </td>
             </tr>
-            <tr>
-                <td>Código</td>
-                <td>Nome</td>
-                <td>Ativo</td>
-                <td>Ação</td>
-            </tr>
-            <tr>
-                <td>Código</td>
-                <td>Nome</td>
-                <td>Ativo</td>
-                <td>Ação</td>
-            </tr>
-            <tr>
-                <td>Código</td>
-                <td>Nome</td>
-                <td>Ativo</td>
-                <td>Ação</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
