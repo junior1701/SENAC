@@ -44,4 +44,10 @@ class ControllerDisciplina extends Base
             'titulo' => 'Lista de Disciplinas'
         ];
     }
+    public function delete($request, $response)
+    {
+        $form1 = $_POST;
+        $form2 = $request->getParsedBody();
+        var_dump($form2);
+    }
 }
