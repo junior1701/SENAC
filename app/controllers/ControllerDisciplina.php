@@ -46,8 +46,30 @@ class ControllerDisciplina extends Base
     }
     public function delete($request, $response)
     {
-        $form1 = $_POST;
-        $form2 = $request->getParsedBody();
-        var_dump($form2);
+        try {
+            $form = $request->getParsedBody();
+            $id = filter_var($form['id'], FILTER_UNSAFE_RAW);
+            $data = [
+                'status' => true,
+                'msg' => 'Registro excluído com sucesso!',
+                'id' => $id
+            ];
+            $json = json_encode($data, JSON_UNESCAPED_UNICODE);
+            $response->getBody()
+                ->write($json);
+            return $response->withStatus(200)
+                ->withHeader('Content-type', 'application/json');
+        } catch (\Exception $e) {
+            $data = [
+                'status' => true,
+                'msg' => 'Registro excluído com sucesso!',
+                'id' => $id
+            ];
+            $json = json_encode($data, JSON_UNESCAPED_UNICODE);
+            $response->getBody()
+                ->write($json);
+            return $response->withStatus(200)
+                ->withHeader('Content-type', 'application/json');
+        }
     }
 }

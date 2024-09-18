@@ -25,5 +25,4 @@ function Delete(id) {
     if (json.status) {
         $('#tr' + id).remove();
     }
-
 }
