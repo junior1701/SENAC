@@ -22,5 +22,8 @@ function Delete(id) {
     }
     const response = fetch('/disciplina/delete', opt);
     const json = response.json();
+    if (json.status) {
+        $('#tr' + id).remove();
+    }
 
 }
