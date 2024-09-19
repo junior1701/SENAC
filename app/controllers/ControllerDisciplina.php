@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\database\builder\SelectQuery;
+use app\database\builder\DeleteQuery;
 
 class ControllerDisciplina extends Base
 {
@@ -37,18 +38,56 @@ class ControllerDisciplina extends Base
     }
     public function alterar($request, $response, $args)
     {
-        var_dump($args);
-        die;
+        $id = filter_var($args['id'], FILTER_SANITIZE_NUMBER_INT);
+        $disciplina = (array) SelectQuery::select()
+            ->from('disciplina')
+            ->where('id', '=', $id)
+            ->fetch();
         $TemplateData = [
+            'id' => $id,
+            'disciplina' => $disciplina,
             'acao' => 'e',
             'titulo' => 'Lista de Disciplinas'
         ];
+        return $this->getTwig()
+            ->render($response, $this->setView('disciplina'), $TemplateData)
+            ->withHeader('Content-Type', 'text/html')
+            ->withStatus(200);
     }
     public function delete($request, $response)
     {
         try {
             $form = $request->getParsedBody();
             $id = filter_var($form['id'], FILTER_UNSAFE_RAW);
+            if (is_null($id)) {
+                $data = [
+                    'status' => false,
+                    'msg' => 'Por favor informe o código do registro a ser excluído!',
+                    'id' => 0
+                ];
+                $json = json_encode($data, JSON_UNESCAPED_UNICODE);
+                $response->getBody()
+                    ->write($json);
+                return $response->withStatus(403)
+                    ->withHeader('Content-type', 'application/json');
+                die;
+            }
+            $IsDelete = DeleteQuery::table('disciplina')
+                ->where('id', '=', $id)
+                ->delete();
+            if ($IsDelete != true) {
+                $data = [
+                    'status' => false,
+                    'msg' => 'Restrição: ' . $IsDelete,
+                    'id' => 0
+                ];
+                $json = json_encode($data, JSON_UNESCAPED_UNICODE);
+                $response->getBody()
+                    ->write($json);
+                return $response->withStatus(403)
+                    ->withHeader('Content-type', 'application/json');
+                die;
+            }
             $data = [
                 'status' => true,
                 'msg' => 'Registro excluído com sucesso!',

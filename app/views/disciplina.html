@@ -11,13 +11,14 @@
 </div>
 <div class="col-12">
     <form id="form">
+        <input type="hidden" id="id" name="id" value="{{id}}">
+        <input type="hidden" id="acao" name="acao" value="{{acao}}">
         <div class="card">
             <div class="card-header">
                 {{titulo}}
             </div>
             <div class="card-body">
                 <div class="form-floating mb-3">
-                    <input type="text" id="id" name="id" value="{{id}}">
                     <input type="text" class="form-control" id="nome" name="nome" placeholder="name@example.com">
                     <label for="nome">Nome</label>
                 </div>

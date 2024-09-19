@@ -12,7 +12,7 @@ const table = new DataTable('#tabela', {
         url: '/js/pt-BR.json'
     },
 });
-function Delete(id) {
+async function Delete(id) {
     document.getElementById('id').value = id;
     const form = document.getElementById('form');
     const formData = new FormData(form);
@@ -20,9 +20,7 @@ function Delete(id) {
         method: 'POST',
         body: formData
     }
-    const response = fetch('/disciplina/delete', opt);
-    const json = response.json();
-    if (json.status) {
-        $('#tr' + id).remove();
-    }
+    const response = await fetch('/disciplina/delete', opt);
+    const json = await response.json();
+    $('#tr' + id).remove();
 }
