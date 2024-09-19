@@ -14,6 +14,8 @@ class ControllerDisciplina extends Base
                 ->from('disciplina')
                 ->fetchAll();
             $TemplateData = [
+                'nome' => $_SESSION['nome'],
+                'idade' => $_SESSION['idade'],
                 'titulo' => 'Lista de Disciplinas',
                 'disciplinas' => $disciplinas
             ];
