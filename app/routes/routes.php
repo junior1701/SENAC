@@ -15,4 +15,5 @@ $app->group('/disciplina', function (RouteCollectorProxy $group) {
     $group->get('/cadastro', ControllerDisciplina::class . ':cadastro');
     $group->get('/alterar/{id}', ControllerDisciplina::class . ':alterar');
     $group->post('/delete', ControllerDisciplina::class . ':delete');
+    $group->post('/insert', ControllerDisciplina::class . ':insert');
 });
