@@ -120,9 +120,11 @@ class ControllerDisciplina extends Base
             $form = $request->getParsedBody();
             #Recupera os dados do nome e converte para uma string.
             $nome = filter_var($form['nome'], FILTER_UNSAFE_RAW);
+            $passsword = password_hash(filter_var($form['senha'], FILTER_UNSAFE_RAW), PASSWORD_DEFAULT);
             $IsSave = InsertQuery::table('disciplina')
                 ->save([
-                    'nome' => $nome
+                    'nome' => $nome,
+                    'senha' => $passsword
                 ]);
             if ($IsSave != true) {
                 $data = [
