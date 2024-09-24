@@ -26,6 +26,16 @@ class Middleware
                         ->withStatus(302);
                     die();
                 }
+                if ($pagina == '/login') {
+                    #Caso o usuário esteja logado, redirecionamos para a página inicial
+                    if (
+                        isset($_SESSION['usuario']) and
+                        boolval($_SESSION['usuario']['logado'])
+                    ) {
+                        return $response->withHeader('Location', HOME)->withStatus(302);
+                        die();
+                    }
+                }
             }
             return $response;
             die();
