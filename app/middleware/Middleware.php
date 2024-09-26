@@ -15,23 +15,14 @@ class Middleware
             $pagina = $request->getRequestTarget();
             #CASO USUÁRIO NÃO ESTEJA LOGADO, DIRECIONAMOS PARA AUTENTICAÇÃO
             if ($method == 'GET') {
-                if (
-                    (empty($_SESSION['usuario']) or
-                        !boolval($_SESSION['usuario']['logado'])) and
-                    ($pagina !== '/login')
-                ) {
+                if ((empty($_SESSION['usuario']) or !boolval($_SESSION['usuario']['logado'])) and ($pagina !== '/login')) {
                     session_destroy();
-                    return $response
-                        ->withHeader('Location', HOME . '/login')
-                        ->withStatus(302);
+                    return $response->withHeader('Location', HOME . '/login')->withStatus(302);
                     die();
                 }
                 if ($pagina == '/login') {
                     #Caso o usuário esteja logado, redirecionamos para a página inicial
-                    if (
-                        isset($_SESSION['usuario']) and
-                        boolval($_SESSION['usuario']['logado'])
-                    ) {
+                    if (isset($_SESSION['usuario']) and boolval($_SESSION['usuario']['logado'])) {
                         return $response->withHeader('Location', HOME)->withStatus(302);
                         die();
                     }
