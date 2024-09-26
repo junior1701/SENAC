@@ -6,7 +6,12 @@ class ControllerLogin extends Base
 {
     public function login($request, $response, $args)
     {
-        $response->getBody()->write('Login');
-        return $response;
+        $TempleteData = [
+            'titulo' => 'Autenticação'
+        ];
+        return $this->getTwig()
+            ->render($response, $this->setView('login'), $TempleteData)
+            ->withHeader('Content-Type', 'text/html')
+            ->withStatus(200);
     }
 }
