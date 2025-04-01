@@ -5,7 +5,7 @@ class ControlAlert {
     static Success(message = '') { }
     static IsDefault() {
 
-     }
+    }
     static Danger(message = '') { }
     static Primary(message = "Processando...", time = 3000) {
         if (!this.element) {
@@ -21,6 +21,4 @@ class ControlAlert {
             }, time);
         });
     }
-
 }
-await ControlAlert.SetId('msg').Primary('Salvando, aguarde...');
