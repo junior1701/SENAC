@@ -42,6 +42,8 @@ class InsertQuery
     {
         $this->fieldsAndValues = $fieldsAndValues;
         $query = $this->createQuery();
+        var_dump($query);
+        die;
         try {
             $IsSave = $this->executeQuery($query);
             return $IsSave;
