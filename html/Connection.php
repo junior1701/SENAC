@@ -1,8 +1,8 @@
 <?php
 #Configuração do DSN de conexão com banco de dados
 $dsn = 'pgsql:host=localhost;port=5432;dbname=senac';
-$usuario = 'senac';
-$senha = 'senac';
+$usuario = 'integra';
+$senha = '@w906083W@';
 try {
     #Criamos uma conexão com banco PostgreSQL
     $pdo = new \PDO($dsn, $usuario, $senha);
