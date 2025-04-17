@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% block main %}
+<div class="col-12">
+    <div class="card mt-2">
+        <div class="card-header">
+            <h3 class="card-title">
+                Lista de usuários
+                <a href="/usuario/cadastro" class="btn btn-sm btn-success">
+                    <i class="fa-solid fa-plus"></i>
+                    Adicionar
+                </a>
+                <button id="btn_atualizar" type="button" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    Atualizar
+                </button>
+            </h3>
+        </div>
+        <div class="card-body">
+            <table id="tabela" class="table table-bordered table-striped table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>E-mail</th>
+                        <th>Data de cadastro</th>
+                        <th>Data de alteração</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+{% include "script.html" %}
+<script defer type="module" src="/js/listuser.js"></script>
+{% endblock %}
