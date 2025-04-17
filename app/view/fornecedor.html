@@ -7,8 +7,8 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Início</a></li>
-                <li class="breadcrumb-item"><a href="/empresa/lista">Lista de empresas</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Cadastro e edição de empresas</li>
+                <li class="breadcrumb-item"><a href="/empresa/lista">Lista de Fornecedor</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro e edição de Fornecedor</li>
             </ol>
         </nav>
     </div>
@@ -20,7 +20,8 @@
             Todos os campos com * são obrigatórios
           </div>
         <div class="col-12">
-            <form name="form" id="form" action="/empresa/lista" method="post" autocomplete="on">
+            <form name="form" id="form" action="/fornecedor/lista" method="post" autocomplete="on">
+                <input type="hidden" id="id" name="id" value="{{id}}">
                 <div class="card">
                     <div class="card-header">
                         Formulario Fornecedor
@@ -42,6 +43,7 @@
                     </div>
                         <br>
                     <button type="button" class="btn btn-secondary" id="salvar">Complete</button>
+                    <button type="button" class="btn btn-danger" id="deletar" onclick="Deletar();">Delete</button>
                 </div>
             </form>
         </div>
