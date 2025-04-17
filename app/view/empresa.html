@@ -1,0 +1,61 @@
+{% extends "main.html" %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Início</a></li>
+                <li class="breadcrumb-item"><a href="/empresa/lista">Lista de Emprsa</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastro e edição de Empresas</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="alert alert-warning" role="alert" id="mensagem">
+        Todos campos com '*' são obrigatórios
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">        
+        <div class="card-body">
+            <form id="form">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="empresa" name="empresa"
+                                placeholder="name@example.com">
+                            <label for="empresa">Informe sua Razão Social</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="name@example.com">
+                            <label for="cnpj">Informe seu CNPJ</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="ie" name="ie"
+                                placeholder="name@example.com">
+                            <label for="ie">Informe seu iE</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button id="salvar" type="button" class="btn btn-success">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% include "script.html" %}
+<script defer type="module" src="/js/empresa.js"></script>
+<script src="/js/ControllAlert.js" ></script>
+
+{% endblock %}

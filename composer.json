@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EDIMAR BINO JUNIOR",
+            "email": "edimarbinojr21@gamil.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.14",
+        "slim/psr7": "^1.7",
+        "slim/twig-view": "^3.4"
+    }
+}
