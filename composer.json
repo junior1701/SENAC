@@ -1,18 +1,19 @@
 {
+    "name": "root/www",
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
+            "Root\\Www\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "EDIMAR BINO JUNIOR",
-            "email": "edimarbinojr21@gamil.com"
+            "name": "edimar bino junior",
+            "email": "edimarbinojr21@gmail.com"
         }
     ],
     "require": {
         "slim/slim": "^4.14",
-        "slim/psr7": "^1.7",
-        "slim/twig-view": "^3.4"
+        "slim/twig-view": "^3.4",
+        "slim/psr7": "^1.7"
     }
 }

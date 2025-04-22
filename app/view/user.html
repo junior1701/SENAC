@@ -55,17 +55,19 @@
                         </div>
                         <div class="col-12">
                             <button id="salvar" type="button" class="btn btn-success">Cadastrar</button>
-                            <button type="button" class="btn btn-danger" id="deletar" onclick="Deletar();">Delete</button>
+                            <button type="button" class="btn btn-danger" id="deletar"
+                                onclick="Deletar();">Delete</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
-    {% block script %}
-    {% include "script.html" %}
-    <script src="/js/ControllAlert.js"></script>
-    <script src="/js/user.js"></script>
-    {% endblock %}
+{% block script %}
+{% include "script.html" %}
+<script src="/js/ControllAlert.js"></script>
+<script src="/js/user.js"></script>
+{% endblock %}

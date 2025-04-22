@@ -68,9 +68,7 @@ class ControllerUser extends Base
     {
         try {
             $form = $request->getParsedBody();
-            var_dump($form);
-            die;
-            $IsDelete = DeleteQuery::table("users")->where("id", '=', 1)->delete();
+            $IsDelete = DeleteQuery::table("usuario")->where("id", '=', $form['id'])->delete();
             if ($IsDelete) {
                 return $this->Send($response, [
                     'status' => true,
@@ -97,5 +95,4 @@ class ControllerUser extends Base
             throw new \Exception("Restrição: " . $e->getMessage(), 1);
         };
     }
-
 }

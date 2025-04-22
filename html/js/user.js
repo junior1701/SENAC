@@ -15,7 +15,7 @@ async function Insert() {
     }
 }
 
-async function deletar() {
+async function Deletar() {
     const form = document.getElementById("form");
     const formData = new FormData(form);
     const options = {
