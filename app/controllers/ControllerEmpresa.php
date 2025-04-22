@@ -58,7 +58,7 @@ class ControllerEmpresa extends Base
             }
             return $this->Send($response, [
                 'status' => true,
-                'msg' => 'Usuário cadastrado com sucesso!'
+                'msg' => 'Empresa cadastrado com sucesso!'
             ], 200);
         } catch (\Exception $e) {
             throw new \Exception(" Restrição " . $e->getMessage(), 1);
