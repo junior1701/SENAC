@@ -20,13 +20,15 @@ class ControllerEmpresa extends Base
                 ->withStatus(200);
         } catch (\Exception $e) {
             throw new \Exception("Restrição: " . $e->getMessage(), 1);
-        };
+        }
+        ;
     }
     public function cadastro($request, $response)
     {
         try {
             $TemplateData = [
                 'titulo' => 'Cadastro de Empresas',
+                'acao' => 'c'
             ];
             return $this->getTwig()
                 ->render($response, $this->setView('empresa'), $TemplateData)
@@ -85,7 +87,8 @@ class ControllerEmpresa extends Base
             $id = $args['id'];
             $TemplateData = [
                 'titulo' => 'Lista de Empresa',
-                'id' => $id
+                'id' => $id,
+                'acao' => 'e'
             ];
             return $this->getTwig()
                 ->render($response, $this->setView('empresa'), $TemplateData)
@@ -93,7 +96,8 @@ class ControllerEmpresa extends Base
                 ->withStatus(200);
         } catch (\Exception $e) {
             throw new \Exception("Restrição: " . $e->getMessage(), 1);
-        };
+        }
+        ;
     }
 
 }

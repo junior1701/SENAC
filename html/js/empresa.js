@@ -1,9 +1,9 @@
 const Save = document.getElementById("salvar");
 
 async function Insert() {
-try {
+    try {
         const form = document.getElementById("form");
-        const formData = new FormData (form);
+        const formData = new FormData(form);
         const options = {
             method: "POST",
             body: formData,
@@ -14,9 +14,23 @@ try {
         throw new Error(error.message);
     }
 }
+async function Update() {
+    try {
+        const form = document.getElementById("form");
+        const formData = new FormData(form);
+        const options = {
+            method: "POST",
+            body: formData,
+        };
+        const response = await fetch('/empresa/update', options);
+        return await response.json();
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
 
 Save.addEventListener("click", async () => {
-    const response = await Insert ();
+    const response = await Insert();
 
     if (response.status) {
         await ControlAlert.SetId('mensagem').Primary("Salvando os Dados...", 2000);
@@ -40,7 +54,8 @@ async function Deletar(id) {
 
 
 Save.addEventListener("click", async () => {
-    const response = await Insert();
+//está função trata dois tipos de variaveis: se o valor do campo for 'c' será realizado o Insert, caso o valor seja 'e' sera realizado o Update
+    const response = (document.getElementById('acao').value === 'c') ? await Insert() : await Update();
 
     if (response.status) {
         await ControlAlert.SetId('mensagem').Primary("Salvando os Dados...", 2000);

@@ -25,11 +25,8 @@ async function Deletar(id) {
     return await response.json();
 }
 
-
-
 Save.addEventListener("click", async () => {
     const response = await Insert();
-
     if (response.status) {
         await ControlAlert.SetId('mensagem').Primary("Salvando os Dados...", 2000);
         await ControlAlert.SetId('mensagem').Sucess('Cadastro realizado!', 1000);

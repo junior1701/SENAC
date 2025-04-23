@@ -34,3 +34,4 @@ $app->group('/fornecedor', function (RouteCollectorProxy $group) {
     $group->get('/alterar/{id}', ControllerFornecedor::class . ':alterar');
     $group->post('/deletar', ControllerFornecedor::class . ':delete');
 });
+
